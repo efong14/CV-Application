@@ -8,23 +8,21 @@ function PersonalInfo({ onSubmit }) {
   };
 
   const [edit, setEdit] = useState(true);
-  const [fullName, setFullName] = useState(initialPersonal.name);
-  const [email, setEmail] = useState(initialPersonal.email);
-  const [phone, setPhone] = useState(initialPersonal.phone);
+  const [personalUpdated, setPersonal] = useState(initialPersonal);
 
   return (
     <section className="personalInfo">
       <div className="fullName">
-        <label>Full Name: </label>
-        <input />
+        <label htmlFor="name">Full Name: </label>
+        <input id="name" />
       </div>
       <div className="email">
-        <label>Email: </label>
-        <input />
+        <label htmlFor="email">Email: </label>
+        <input id="email" />
       </div>
       <div className="phoneNumber">
-        <label>Phone Number: </label>
-        <input />
+        <label htmlFor="phone">Phone Number: </label>
+        <input id="phone" />
       </div>
       <button onClick={onSubmit}> Submit</button>
     </section>
