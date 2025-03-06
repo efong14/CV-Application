@@ -1,27 +1,31 @@
 import { useState } from 'react';
 import { PersonalInfo } from './personalInfo';
 
-const initialInfo = {
-  name: 'Default',
-  email: 'default@defaultMail.com',
-  phone: '000-000-000',
-};
-
-function CVdisplay({ isEdit }) {
-  return (
-    <>
-      <h1>CV</h1>
-      {isEdit ? <div>Editable</div> : <div>Submitted</div>}
-    </>
-  );
-}
-
 export default function DisplayAll() {
-  const [edit, setEdit] = useState(true);
+  const initialPersonal = {
+    name: 'Default',
+    email: 'default@defaultMail.com',
+    phone: '000-000-000',
+  };
+
+  function CVdisplay() {
+    return (
+      <>
+        <h1>{personalUpdated.name}</h1>
+        <h1>{personalUpdated.email}</h1>
+        <h1>{personalUpdated.phone}</h1>
+      </>
+    );
+  }
+
+  const [personalUpdated, setPersonal] = useState(initialPersonal);
+
   return (
     <>
-      <PersonalInfo />
-      <CVdisplay isEdit={edit} />
+      <PersonalInfo
+        showItems={(item, e) => setPersonal({ ...personalUpdated, [item]: e.target.value })}
+      />
+      <CVdisplay />
     </>
   );
 }

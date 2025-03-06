@@ -1,19 +1,6 @@
 import { useState } from 'react';
 
-function PersonalInfo({}) {
-  const initialPersonal = {
-    name: 'Default',
-    email: 'default@defaultMail.com',
-    phone: '000-000-000',
-  };
-
-  const [edit, setEdit] = useState(true);
-  const [personalUpdated, setPersonal] = useState(initialPersonal);
-
-  function changePersonal(info, e) {
-    setPersonal({ ...personalUpdated, [info]: e.target.value });
-  }
-
+function PersonalInfo({ showItems, log }) {
   return (
     <section className="personalInfo">
       <div className="fullName">
@@ -21,7 +8,7 @@ function PersonalInfo({}) {
         <input
           id="name"
           onChange={(e) => {
-            setPersonal({ ...personalUpdated, name: e.target.value });
+            showItems('name', e);
           }}
         />
       </div>
@@ -30,7 +17,7 @@ function PersonalInfo({}) {
         <input
           id="email"
           onChange={(e) => {
-            setPersonal({ ...personalUpdated, email: e.target.value });
+            showItems('email', e);
           }}
         />
       </div>
@@ -39,11 +26,10 @@ function PersonalInfo({}) {
         <input
           id="phone"
           onChange={(e) => {
-            changePersonal('phone', e);
+            showItems('phone', e);
           }}
         />
       </div>
-      <button onClick={() => console.log(personalUpdated)}> Submit</button>
     </section>
   );
 }
