@@ -20,10 +20,8 @@ export default function DisplayAll() {
   const [edit, setEdit] = useState(true);
   return (
     <>
-      <PersonalInfo onSubmit={() => setEdit(false)} />
+      <PersonalInfo />
       <CVdisplay isEdit={edit} />
     </>
   );
 }
-
-// Initial branch check
