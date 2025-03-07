@@ -1,15 +1,14 @@
-input {
+input,
+textarea {
   display: block;
   margin-bottom: 10px;
-  max-width: 300px;
-}
-
-button {
-  margin-top: 20px;
-  max-width: 80px;
 }
 
 .personalInfo {
   display: flex;
   flex-direction: column;
+}
+
+h1 {
+  white-space: pre-wrap;
 }

@@ -1,12 +1,13 @@
 import { useState } from 'react';
 
-function PersonalInfo({ showItems, log }) {
+function PersonalInfo({ showItems }) {
   return (
     <section className="personalInfo">
-      <div className="fullName">
+      <div className="name">
         <label htmlFor="name">Full Name: </label>
         <input
           id="name"
+          placeholder="Enter Name"
           onChange={(e) => {
             showItems('name', e);
           }}
@@ -16,15 +17,18 @@ function PersonalInfo({ showItems, log }) {
         <label htmlFor="email">Email: </label>
         <input
           id="email"
+          placeholder="Enter Email"
           onChange={(e) => {
             showItems('email', e);
           }}
         />
       </div>
-      <div className="phoneNumber">
+      <div className="phone">
         <label htmlFor="phone">Phone Number: </label>
         <input
           id="phone"
+          type="tel"
+          placeholder="Enter Phone Number"
           onChange={(e) => {
             showItems('phone', e);
           }}
