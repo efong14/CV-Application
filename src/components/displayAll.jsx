@@ -22,9 +22,12 @@ export default function DisplayAll() {
   function CVdisplay() {
     return (
       <>
-        <h1>{personalUpdated.name}</h1>
-        <h1>{personalUpdated.email}</h1>
-        <h1>{personalUpdated.phone}</h1>
+        <h1 className="fullName">{personalUpdated.name}</h1>
+        <div className="contacts">
+          <div className="email">{personalUpdated.email} |</div>
+          <div className="phone">{personalUpdated.phone}</div>
+        </div>
+        <h1>Education</h1>
         <h1>{personalUpdated.school}</h1>
         <h1>{personalUpdated.degree}</h1>
         <h1>{personalUpdated.edStart}</h1>
@@ -42,16 +45,20 @@ export default function DisplayAll() {
 
   return (
     <>
-      <PersonalInfo
-        showItems={(item, e) => setPersonal({ ...personalUpdated, [item]: e.target.value })}
-      />
-      <EducationInfo
-        showItems={(item, e) => setPersonal({ ...personalUpdated, [item]: e.target.value })}
-      />
-      <WorkInfo
-        showItems={(item, e) => setPersonal({ ...personalUpdated, [item]: e.target.value })}
-      />
-      <CVdisplay />
+      <section className="inputSection">
+        <PersonalInfo
+          showItems={(item, e) => setPersonal({ ...personalUpdated, [item]: e.target.value })}
+        />
+        <EducationInfo
+          showItems={(item, e) => setPersonal({ ...personalUpdated, [item]: e.target.value })}
+        />
+        <WorkInfo
+          showItems={(item, e) => setPersonal({ ...personalUpdated, [item]: e.target.value })}
+        />
+      </section>
+      <section className="displaySection">
+        <CVdisplay />
+      </section>
     </>
   );
 }

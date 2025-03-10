@@ -1,14 +1,53 @@
+@font-face {
+  font-family: garamond;
+  src: url('./font/EBGaramond-VariableFont_wght.ttf');
+}
+
+#root {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.inputSection,
+.displaySection {
+  margin-top: 20px;
+  font-family: 'garamond';
+  font-size: 25px;
+}
+
+.inputSection {
+  justify-self: center;
+}
+
 input,
 textarea {
   display: block;
   margin-bottom: 10px;
-}
-
-.personalInfo {
-  display: flex;
-  flex-direction: column;
+  font-family: 'garamond';
+  font-size: 20px;
 }
 
 h1 {
   white-space: pre-wrap;
+}
+
+.displaySection {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+}
+
+.fullName,
+.contacts {
+  margin: 0px;
+  align-self: center;
+}
+
+.contacts {
+  display: flex;
+  align-items: baseline;
+}
+
+.email {
+  margin-right: 5px;
 }

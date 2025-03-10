@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 function PersonalInfo({ showItems }) {
   return (
     <section className="personalInfo">
