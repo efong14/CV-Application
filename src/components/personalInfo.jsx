@@ -1,6 +1,14 @@
+import { useState } from 'react';
 function PersonalInfo({ showItems }) {
+  const [isActive, setActive] = useState(true);
+
+  function toggle() {
+    isActive ? setActive(false) : setActive(true);
+  }
+
   return (
     <section className="personalInfo">
+      <div className="inputHeader"> General Information</div>
       <div className="name">
         <label htmlFor="name">Full Name: </label>
         <input

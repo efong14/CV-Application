@@ -5,11 +5,12 @@
 
 #root {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 400px 2fr;
 }
 
 .inputSection,
 .displaySection {
+  max-width: 1000px;
   margin-top: 20px;
   font-family: 'garamond';
   font-size: 25px;
@@ -27,27 +28,69 @@ textarea {
   font-size: 20px;
 }
 
-h1 {
-  white-space: pre-wrap;
+.personalInfo,
+.educationInfo {
+  margin-bottom: 20px;
+}
+
+.inputHeader {
+  font-weight: bold;
+}
+
+.name,
+.school,
+.company {
+  border-top: 1px solid black;
+  padding-top: 5px;
 }
 
 .displaySection {
   border: 1px solid black;
+  padding-top: 40px;
+  padding-left: 40px;
+  padding-right: 40px;
   display: flex;
   flex-direction: column;
 }
 
-.fullName,
-.contacts {
+.fullNameCV,
+.contactsCV {
   margin: 0px;
   align-self: center;
 }
 
-.contacts {
+.contactsCV {
   display: flex;
   align-items: baseline;
 }
 
-.email {
+.emailCV {
   margin-right: 5px;
+}
+
+.sectionHeader {
+  padding-bottom: 5px;
+  border-bottom: 1px black solid;
+}
+
+.sectionContainer {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 200px;
+}
+
+.dates {
+  width: 200px;
+  font-size: 20px;
+}
+
+.companyCV,
+.schoolCV {
+  font-weight: bold;
+}
+
+.responsibilitiesCV {
+  font-size: 18px;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
 }

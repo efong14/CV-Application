@@ -1,6 +1,7 @@
 function EducationInfo({ showItems }) {
   return (
     <section className="educationInfo">
+      <div className="inputHeader"> Education</div>
       <div className="school">
         <label htmlFor="school">School: </label>
         <input
@@ -26,7 +27,6 @@ function EducationInfo({ showItems }) {
         <input
           id="edStart"
           type="date"
-          value="2000-01-01"
           onChange={(e) => {
             showItems('edStart', e);
           }}
@@ -35,7 +35,6 @@ function EducationInfo({ showItems }) {
         <input
           id="edEnd"
           type="date"
-          value="2004-01-01"
           onChange={(e) => {
             showItems('edEnd', e);
           }}

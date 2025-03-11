@@ -1,6 +1,7 @@
 function WorkInfo({ showItems }) {
   return (
     <section className="workInfo">
+      <div className="inputHeader"> Relevant Experience</div>
       <div className="company">
         <label htmlFor="company">Company Name: </label>
         <input
@@ -11,7 +12,6 @@ function WorkInfo({ showItems }) {
           }}
         />
       </div>
-
       <div className="position">
         <label htmlFor="position">Position Name: </label>
         <input
@@ -22,7 +22,6 @@ function WorkInfo({ showItems }) {
           }}
         />
       </div>
-
       <div className="responsibilities">
         <label htmlFor="responsibilities">Responsibilities: </label>
         <textarea
@@ -34,24 +33,21 @@ function WorkInfo({ showItems }) {
           }}
         />
       </div>
-
       <div className="workDuration">
         <label htmlFor="workStart">Start Date: </label>
         <input
           id="workStart"
           type="date"
-          value="2004-01-01"
           onChange={(e) => {
-            showItems('workStart', e);
+            showItems('jobStart', e);
           }}
         />
         <label htmlFor="workEnd">End Date: </label>
         <input
           id="workEnd"
           type="date"
-          value="2006-01-01"
           onChange={(e) => {
-            showItems('workEnd', e);
+            showItems('jobEnd', e);
           }}
         />
       </div>
